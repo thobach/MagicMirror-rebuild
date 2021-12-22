@@ -1,28 +1,22 @@
 {
   "name": "MagicMirror-rebuild",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Electron supporting package to rebuild native node modules against the currently installed MagicMirror",
-  "main": "lib/src/main.js",
-  "typings": "lib/src/main.d.ts",
+  "main": "build/main.js",
+  "typings": "build/main.d.ts",
   "scripts": {
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "compile": "tsc",
-    "coverage": "nyc npm run mocha",
-    "watch": "tsc -w",
-    "prepare": "npm run compile",
-    "mocha": "cross-env TS_NODE_FILES=true mocha --require ts-node/register ./test/*.ts",
-    "lint": "eslint --ext .ts .",
-    "test": "npm run lint && npm run mocha"
+    "prepare": "npm run compile"
   },
   "bin": {
-    "electron-rebuild": "lib/src/cli.js"
+    "electron-rebuild": "build/cli.js"
   },
   "files": [
-    "lib"
+    "build"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/electron/electron-rebuild"
+    "url": "https://github.com/bugsounet/MagicMirror-rebuild"
   },
   "keywords": [
     "electron",
@@ -68,13 +62,8 @@
     "@typescript-eslint/parser": "^4.0.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "codecov": "^3.7.2",
     "cross-env": "^7.0.2",
     "electron": "^10.0.0",
-    "eslint": "^7.7.0",
-    "eslint-plugin-mocha": "^8.0.0",
-    "mocha": "^8.1.1",
-    "nyc": "^15.1.0",
     "semantic-release": "^17.1.1",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
@@ -114,7 +103,8 @@
   },
   "eslintIgnore": [
     "*.d.ts",
-    "node_modules"
+    "node_modules",
+    "test"
   ],
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript"
