@@ -8,10 +8,10 @@
     "compile": "tsc",
     "prepare": "npm run compile"
   },
-  "bin": [
+  "bin": {
     "electron-rebuild": "build/cli.js",
     "MagicMirror-rebuild": "build/cli.js"
-  ],
+  },
   "files": [
     "build"
   ],
