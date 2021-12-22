@@ -1,6 +1,6 @@
 {
   "name": "MagicMirror-rebuild",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Electron supporting package to rebuild native node modules against the currently installed MagicMirror",
   "main": "build/main.js",
   "typings": "build/main.d.ts",
