@@ -39,7 +39,9 @@
     "got": "^11.8.3",
     "node-abi": "^3.5.0",
     "ora": "^5.1.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "yargs": "^17.3.0"
+
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
