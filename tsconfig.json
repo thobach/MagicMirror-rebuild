@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "pretty": true,
     "target": "ES2018",
-    "outDir": "lib"
+    "outDir": "build"
   },
   "formatCodeOptions": {
     "indentSize": 2,
@@ -23,6 +23,7 @@
   },
   "exclude": [
     "node_modules",
-    "lib"
+    "lib",
+    "test"
   ]
 }
