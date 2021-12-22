@@ -4,10 +4,6 @@
   "description": "Electron supporting package to rebuild native node modules against the currently installed MagicMirror",
   "main": "build/main.js",
   "typings": "build/main.d.ts",
-  "scripts": {
-    "compile": "tsc",
-    "prepare": "npm run compile"
-  },
   "bin": {
     "electron-rebuild": "build/cli.js",
     "MagicMirror-rebuild": "build/cli.js"
