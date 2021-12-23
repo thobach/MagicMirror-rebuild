@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProjectRootPath = exports.searchForNodeModules = exports.searchForModule = void 0;
 const fs = require("fs-extra");
 const path = require("path");
@@ -71,4 +70,3 @@ async function getProjectRootPath(cwd) {
     return cwd;
 }
 exports.getProjectRootPath = getProjectRootPath;
-//# sourceMappingURL=search-module.js.map

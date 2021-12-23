@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 require("colors");
 const fs = require("fs-extra");
 const path = require("path");
@@ -10,7 +9,7 @@ const rebuild_1 = require("./rebuild");
 const search_module_1 = require("./search-module");
 const electron_locator_1 = require("./electron-locator");
 const yargs = argParser
-    .usage('Usage: electron-rebuild --version [version] --module-dir [path]')
+    .usage('Usage: MagicMirror-rebuild --version [version] --module-dir [path]')
     .help('h')
     .alias('h', 'help')
     .version(false)
@@ -41,21 +40,19 @@ const yargs = argParser
     .describe('prebuild-tag-prefix', 'GitHub tag prefix passed to prebuild-install. Default is "v"')
     .describe('force-abi', 'Override the ABI version for the version of Electron you are targeting.  Only use when targeting Nightly releases.')
     .describe('use-electron-clang', 'Use the clang executable that Electron used when building its binary. This will guarantee compiler compatibility')
-    .epilog('Copyright 2022');
+    .epilog('@bugsounet Copyright 2022');
 const argv = yargs.argv;
 if (argv.h) {
     yargs.showHelp();
     process.exit(0);
 }
 if (process.argv.length === 3 && process.argv[2] === '--version') {
-    /* eslint-disable @typescript-eslint/no-var-requires */
     try {
         console.log('MagicMirror Rebuild Version:', require(path.resolve(__dirname, '../../package.json')).version);
     }
     catch (err) {
         console.log('MagicMirror Rebuild Version:', require(path.resolve(__dirname, '../package.json')).version);
     }
-    /* eslint-enable @typescript-eslint/no-var-requires */
     process.exit(0);
 }
 const handler = (err) => {
@@ -73,12 +70,12 @@ process.on('unhandledRejection', handler);
         try {
             if (!electronModulePath)
                 throw new Error('Prebuilt electron module not found');
-            // eslint-disable-next-line @typescript-eslint/no-var-requires
+
             const pkgJson = require(path.join(electronModulePath, 'package.json'));
             electronModuleVersion = pkgJson.version;
         }
         catch (e) {
-            throw new Error(`Unable to find electron's version number, either install it or specify an explicit version`);
+            throw new Error(`Unable to find electron's version number of MagicMirror, either install it or specify an explicit version`);
         }
     }
     let rootDirectory = argv.m;
@@ -151,4 +148,3 @@ process.on('unhandledRejection', handler);
     rebuildSpinner.text = 'MagicMirror Rebuild Complete';
     rebuildSpinner.succeed();
 })();
-//# sourceMappingURL=cli.js.map

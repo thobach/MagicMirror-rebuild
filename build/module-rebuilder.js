@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.ModuleRebuilder = exports.BuildType = void 0;
 const debug = require("debug");
 const detectLibc = require("detect-libc");
@@ -268,4 +267,3 @@ class ModuleRebuilder {
     }
 }
 exports.ModuleRebuilder = ModuleRebuilder;
-//# sourceMappingURL=module-rebuilder.js.map

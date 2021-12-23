@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.downloadClangVersion = exports.getClangEnvironmentVars = void 0;
 const cp = require("child_process");
 const debug = require("debug");
@@ -128,4 +127,3 @@ async function downloadClangVersion(electronVersion) {
     d('cleaning up clang tar file');
 }
 exports.downloadClangVersion = downloadClangVersion;
-//# sourceMappingURL=clang-fetcher.js.map

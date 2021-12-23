@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.rebuildNativeModules = exports.rebuild = exports.createOptions = exports.Rebuilder = void 0;
 const crypto = require("crypto");
 const debug = require("debug");
@@ -149,7 +148,6 @@ class Rebuilder {
         if (!(await fs.pathExists(path.resolve(modulePath, 'binding.gyp')))) {
             return;
         }
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const { ModuleRebuilder } = require('./module-rebuilder');
         const moduleRebuilder = new ModuleRebuilder(this, modulePath);
         this.lifecycle.emit('module-found', path.basename(modulePath));
@@ -245,7 +243,6 @@ class Rebuilder {
 }
 exports.Rebuilder = Rebuilder;
 function rebuildWithOptions(options) {
-    // eslint-disable-next-line prefer-rest-params
     d('rebuilding with args:', arguments);
     const lifecycle = new events_1.EventEmitter();
     const rebuilderOptions = { ...options, lifecycle };
@@ -269,13 +266,12 @@ function createOptions(buildPath, electronVersion, arch, extraModules, force, he
     };
 }
 exports.createOptions = createOptions;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 function doRebuild(options, ...args) {
     if (typeof options === 'object') {
         return rebuildWithOptions(options);
     }
     console.warn('You are using the deprecated electron-rebuild API, please switch to using the options object instead');
-    // eslint-disable-next-line @typescript-eslint/ban-types
     return rebuildWithOptions(createOptions(options, ...args));
 }
 exports.rebuild = doRebuild;
@@ -288,4 +284,3 @@ function rebuildNativeModules(electronVersion, modulePath, whichModule = '', _he
     return (0, exports.rebuild)(modulePath, electronVersion, arch, whichModule.split(','));
 }
 exports.rebuildNativeModules = rebuildNativeModules;
-//# sourceMappingURL=rebuild.js.map

@@ -3,4 +3,3 @@ process.argv.splice(1, 1);
 // 1.8.x and 8.x ABI collision
 Object.defineProperty(process.versions, 'modules', { value: '-1', writable: false });
 require(process.argv[1]);
-//# sourceMappingURL=prebuild-shim.js.map
