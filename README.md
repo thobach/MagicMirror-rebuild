@@ -6,6 +6,6 @@ This version is a fork of official version of electron rebuild v2.1.1
 
 This version is a special coding for MagicMirror²
 
-available:
-.bin/electron-rebuild
+# Available:
+.bin/electron-rebuild<br>
 .bin/MagicMirror-rebuild
