@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "Electron supporting package to rebuild native node modules against the currently installed MagicMirror",
   "main": "build/main.js",
-  "typings": "build/main.d.ts",
   "bin": {
     "electron-rebuild": "build/cli.js",
     "MagicMirror-rebuild": "build/cli.js"
@@ -30,13 +29,6 @@
   "homepage": "https://github.com/bugsounet/MagicMirror-rebuild",
   "engines": {
     "node": ">=12.0.0"
-  },
-  "devDependencies": {
-    "@types/debug": "^4.1.7",
-    "@types/fs-extra": "^9.0.13",
-    "@types/tar": "^6.1.1",
-    "@types/yargs": "^16.0.4",
-    "typescript": "^4.5.4"
   },
   "dependencies": {
     "@malept/cross-spawn-promise": "^1.1.1",
