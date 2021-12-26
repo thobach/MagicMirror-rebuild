@@ -6,6 +6,12 @@ This version is a fork of official version of electron rebuild v2.1.1
 
 This version is a special coding for MagicMirror²
 
-# Available:
-.bin/electron-rebuild<br>
-.bin/MagicMirror-rebuild
+# Installation
+`npm install magicmirror-rebuild --save`
+
+# Available commmands
+
+**same commands linked**
+
+`.bin/electron-rebuild`<br>
+`.bin/MagicMirror-rebuild`
